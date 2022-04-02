@@ -1,0 +1,22 @@
+finetuning BERT+Softmax:
+argment :
+    batch_size = 32
+    max_seq_len = 128
+    learning_rate = 5e-5
+    total_train_epoch = 40
+    weight_decay_finetune = 1e-5
+    lr_crf_fc = 1e-5
+    weight_decay_crf_fc = 1e-5
+    warmup_proportion = 0.002
+
+
+
+Transformer+CRF：
+    batch_size = 64
+    max_seq_len = 128
+    learning_rate = 5e-3
+    total_train_epoch = 10
+    attention_type = 'general'
+
+    self.word_embed = nn.Embedding(self.word_emb_table.shape[0], self.word_emb_table.shape[1])
+    nn.init.xavier_normal_(self.word_embed.weight)
